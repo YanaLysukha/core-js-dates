@@ -65,7 +65,7 @@ function getDayName(date) {
     'Saturday',
   ];
   const newDate = new Date(date);
-  const dayNumber = newDate.getDay();
+  const dayNumber = newDate.getUTCDay();
   return week[dayNumber];
 }
 
@@ -81,7 +81,7 @@ function getDayName(date) {
  * Date('2024-02-16T00:00:00Z') => Date('2024-02-23T00:00:00Z')
  */
 function getNextFriday(date) {
-  const dayNumber = date.getDay();
+  const dayNumber = date.getUTCDay();
   let plusDays;
 
   plusDays = 5 - dayNumber;
